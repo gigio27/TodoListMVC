@@ -1,0 +1,14 @@
+@model List<ToDoListMVC.Models.TodoItem>
+
+    <h2>Task List</h2>
+
+    <ul>
+        @foreach (var task in Model)
+        {
+            <li>
+                @task.Title - @(task.IsDone ? "✅" : "❌")
+            </li>
+        }
+    </ul>
+
+<a href="/Todo/Add">Add a new task</a>

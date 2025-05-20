@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.SignalR;
 
-namespace ToDoApp.Models
+namespace ToDoListMVC.Models
 {
     public class TodoItem
     {

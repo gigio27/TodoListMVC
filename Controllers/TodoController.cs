@@ -1,28 +1,27 @@
 using Microsoft.AspNetCore.Mvc;
 using TodoListMVC.Models;
 using System.Collections.Generic;
-using ToDoApp.Models;
 
 namespace ToDoListMVC.Controllers
 {
     public class TodoController : Controller
     {
-        private static List<TodoItem> taches = new List<TodoItem>();
+        private static List<TodoItem> tasks = new List<TodoItem>();
 
         public IActionResult Index()
         {
-            return View(taches);
+            return View(tasks);
         }
         [HttpGet]
-        public IActionResult Add();
+        public IActionResult Add()
         {
             return View();
     }
     [HttpPost]
-        public IactionResult Add(TodoItem item)
+        public IActionResult Add(TodoItem item)
         {
-            item.Id = taches.Count + 1;
-            taches.Add(item);
+            item.Id = tasks.Count + 1;
+            tasks.Add(item);
             return RedirectToAction("Index");
         }
     }
